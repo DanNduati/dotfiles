@@ -1,5 +1,15 @@
 [user]
-	name = Daniel Nduati
+	name = DanielNduati
 	email = dannduati2@gmail.com
 [core]
-	editor = vim
+	editor = nvim
+[init]
+	defaultBranch = main
+[branch]
+	autosetuprebase = always
+[push]
+	autoSetupRemote = true
+[url "https://invent.kde.org/"]
+	insteadOf = kde:
+[url "ssh://git@invent.kde.org/"]
+	pushInsteadOf = kde:
