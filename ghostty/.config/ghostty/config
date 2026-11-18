@@ -1,11 +1,28 @@
 # Ghostty config. All options: `ghostty +show-config --default --docs`
 
+# --- Look ---------------------------------------------------------------------
 # Built-in theme; same palette as gruvbox.nvim and herdr's gruvbox
 theme = Gruvbox Dark
-font-size = 18
+# Window chrome (titlebar, tabs) takes the theme's colours instead of the GTK theme
+window-theme = ghostty
+
+# Bundled JetBrains Mono with built-in Nerd Font symbols (no font install needed)
+font-size = 15
+adjust-cell-height = 10%
+
+window-padding-x = 10
+window-padding-y = 8
+window-padding-balance = true
+
+# Initial size in cells
+window-width = 120
+window-height = 30
+
 cursor-style = bar
 mouse-hide-while-typing = true
+resize-overlay = never
 
+# --- Shell --------------------------------------------------------------------
 # Set the shell explicitly: the snap build can't resolve the passwd entry on Ubuntu 20.04
 # (nsswitch compat+systemd) and would fall back to sh without shell integration.
 command = direct:/usr/bin/zsh
@@ -13,3 +30,12 @@ shell-integration = zsh
 
 # Lets `ssh` to hosts without Ghostty's terminfo (e.g. the Pi) work
 shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo,path
+
+# --- System -------------------------------------------------------------------
+# One process serves every window (Ctrl+Alt+T opens a new window instantly instead of
+# paying the ~0.8s snap + GTK4 cold start), and stays alive 10 minutes after the last close.
+gtk-single-instance = true
+quit-after-last-window-closed-delay = 10m
+
+# Old systemd (245) can't create the transient cgroup scope; skip it instead of logging errors
+linux-cgroup = never
