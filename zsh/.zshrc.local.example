@@ -1,0 +1,2 @@
+# Copy to ~/.zshrc.local (chmod 600). Machine-specific settings and secrets; never commit the real file.
+# export ONO_CLI_KEY="..."

@@ -130,7 +130,6 @@ export MAIL_DEFAULT_SENDER="dannduati2@gmail.com"
 force_color_prompt=yes
 setxkbmap us
 export PATH=$HOME/local/bin:$PATH
-PATH="$(pwd):$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
