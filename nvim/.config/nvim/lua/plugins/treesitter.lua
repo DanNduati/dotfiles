@@ -1,5 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    branch = "master", -- the legacy branch this config targets; main is an incompatible rewrite
     build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     cmd = { "TSInstall", "TSInstallSync", "TSUpdate", "TSUpdateSync" },
