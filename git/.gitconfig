@@ -9,6 +9,24 @@
 	autosetuprebase = always
 [push]
 	autoSetupRemote = true
+[fetch]
+	prune = true
+[rebase]
+	autoStash = true
+[rerere]
+	enabled = true
+[diff]
+	algorithm = histogram
+[merge]
+	conflictstyle = zdiff3
+[commit]
+	verbose = true
+[alias]
+	st = status -sb
+	lg = log --oneline --graph --decorate -20
+	co = checkout
+	sw = switch
+	undo = reset --soft HEAD~1
 [url "https://invent.kde.org/"]
 	insteadOf = kde:
 [url "ssh://git@invent.kde.org/"]
