@@ -1,25 +1,21 @@
 return {
     {
-        'hrsh7th/cmp-nvim-lsp'
-    },
-    {
-        'hrsh7th/cmp-buffer'
-    },
-    {
-        'hrsh7th/cmp-path'
-    },
-    {
-        'hrsh7th/cmp-cmdline'
-    },
-    {
-        'L3MON4D3/LuaSnip',
-        dependencies = {
-            'saadparwaiz1/cmp_luasnip',
-            'rafamadriz/friendly-snippets'
-        }
-    },
-    {
         "hrsh7th/nvim-cmp",
+        -- Loaded on first insert / command line instead of at startup
+        event = { "InsertEnter", "CmdlineEnter" },
+        dependencies = {
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-cmdline',
+            {
+                'L3MON4D3/LuaSnip',
+                dependencies = {
+                    'saadparwaiz1/cmp_luasnip',
+                    'rafamadriz/friendly-snippets'
+                }
+            },
+        },
         config = function()
             local cmp = require 'cmp'
             require("luasnip.loaders.from_vscode").lazy_load()

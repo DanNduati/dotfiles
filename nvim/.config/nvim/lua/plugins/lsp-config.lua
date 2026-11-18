@@ -44,15 +44,14 @@ local servers = {
 }
 
 return {
+    -- mason itself is only needed as a dependency (PATH setup) or for :Mason
+    { "mason-org/mason.nvim", cmd = "Mason", opts = {} },
+    { "neovim/nvim-lspconfig", lazy = true },
     {
-        "mason-org/mason.nvim",
-        lazy = false,
-        opts = {},
-    },
-    {
+        -- Everything LSP-related loads when the first file is opened, not at startup
         "mason-org/mason-lspconfig.nvim",
-        lazy = false,
-        dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" },
+        event = { "BufReadPre", "BufNewFile" },
+        dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig", "hrsh7th/cmp-nvim-lsp" },
         opts = {
             -- rust_analyzer comes from rustup, so it is not installed through mason.
             ensure_installed = {
@@ -61,11 +60,9 @@ return {
             },
             automatic_enable = false, -- enabled explicitly below
         },
-    },
-    {
-        "neovim/nvim-lspconfig",
-        dependencies = { "hrsh7th/cmp-nvim-lsp" },
-        config = function()
+        config = function(_, opts)
+            require("mason-lspconfig").setup(opts)
+
             vim.lsp.config("*", { capabilities = require("cmp_nvim_lsp").default_capabilities() })
             for name, cfg in pairs(servers) do
                 vim.lsp.config(name, cfg)
