@@ -1,10 +1,10 @@
 return {
-    'sainnhe/gruvbox-material',
+    'ellisonleao/gruvbox.nvim',
     lazy = false,
     name = "Gruvbox",
     priority = 1000,
     config = function()
-        vim.cmd.colorscheme "gruvbox"
         vim.o.background = "dark"
+        vim.cmd.colorscheme "gruvbox"
     end
 }
