@@ -1,0 +1,4 @@
+# Copy to ~/.bashrc.local (chmod 600). Machine-specific settings and secrets; never commit the real file.
+# export SENDGRID_API_KEY="..."
+# export SECRET_KEY="..."
+# export ONO_CLI_KEY="..."
