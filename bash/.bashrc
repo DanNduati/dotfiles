@@ -124,5 +124,32 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 . "$HOME/.cargo/env"
+export MAIL_DEFAULT_SENDER="dannduati2@gmail.com"
+
 #tmux prompt color problem
 force_color_prompt=yes
+setxkbmap us
+export PATH=$HOME/local/bin:$PATH
+PATH="$(pwd):$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# neovim takeover
+alias vim='nvim'
+export EDITOR='nvim'
+
+[[ -s "/home/daniel/.gvm/scripts/gvm" ]] && source "/home/daniel/.gvm/scripts/gvm"
+export PATH="$HOME/zig-x86_64-linux-0.14.1:$PATH"
+
+export PATH=$PATH:/home/daniel/bin
+
+source '/home/daniel/lib/azure-cli/az.completion'
+export PATH=/opt/arm-gnu-toolchain-12.3.rel1-x86_64-arm-none-eabi/bin:$PATH
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/daniel/.local/bin:$PATH"
+
+# Machine-specific settings and secrets (not tracked in git)
+[ -f ~/.bashrc.local ] && . ~/.bashrc.local
