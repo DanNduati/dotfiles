@@ -48,6 +48,7 @@ link tmux/.tmux.conf         "$HOME/.tmux.conf"
 link git/.gitconfig          "$HOME/.gitconfig"
 link nvim/.config/nvim       "$HOME/.config/nvim"
 link herdr/.config/herdr/config.toml "$HOME/.config/herdr/config.toml"
+link ghostty/.config/ghostty/config "$HOME/.config/ghostty/config"
 install_local zsh/.zshrc.local.example   "$HOME/.zshrc.local"
 install_local bash/.bashrc.local.example "$HOME/.bashrc.local"
 
