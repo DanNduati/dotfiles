@@ -1,0 +1,28 @@
+onboarding = false
+
+# Same palette as gruvbox.nvim in nvim: herdr's built-in gruvbox matches it hex for hex
+# (background #282828, text #ebdbb2, red #fb4934, green #b8bb26, yellow #fabd2f, ...).
+[theme]
+name = "gruvbox"
+
+[theme.custom]
+# The built-in theme leaves the sidebar on the terminal's own background. GNOME Terminal
+# follows the desktop theme, not gruvbox, so pin it to match nvim.
+sidebar_bg = "#282828"
+
+[ui]
+# Highlights and borders; gruvbox neutral yellow, the same as the theme's own accent (default is cyan).
+accent = "#d79921"
+
+# Notify when a background agent finishes or needs input.
+[ui.toast]
+delivery = "herdr"
+delay_seconds = 1
+
+[ui.toast.herdr]
+position = "bottom-right"
+
+# Off because paplay cannot decode mp3 on this machine (it floods the server log with warnings).
+# Re-enable after `sudo apt install mpg123`.
+[ui.sound]
+enabled = false

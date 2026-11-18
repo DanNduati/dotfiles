@@ -11,6 +11,7 @@ Config for my dev machine (Ubuntu 20.04, zsh + Oh My Zsh, tmux, Neovim).
 | `tmux/.tmux.conf` | `~/.tmux.conf` |
 | `git/.gitconfig` | `~/.gitconfig` |
 | `nvim/.config/nvim/` | `~/.config/nvim` (lazy.nvim, Lua) |
+| `herdr/.config/herdr/config.toml` | `~/.config/herdr/config.toml` (herdr, gruvbox theme) |
 | `legacy/` | old Vim configs (`init.vim`, `.vimrc`), kept for reference |
 
 ## Install
