@@ -32,5 +32,10 @@ shell-integration = zsh
 shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo,path
 
 # --- System -------------------------------------------------------------------
+# One process serves every window (Ctrl+Alt+T opens a new window instantly instead of
+# paying the ~0.8s snap + GTK4 cold start), and stays alive 10 minutes after the last close.
+gtk-single-instance = true
+quit-after-last-window-closed-delay = 10m
+
 # Old systemd (245) can't create the transient cgroup scope; skip it instead of logging errors
 linux-cgroup = never
