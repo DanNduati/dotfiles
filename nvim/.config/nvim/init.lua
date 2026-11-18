@@ -16,4 +16,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", {
+    install = { colorscheme = { "gruvbox" } },
+    checker = { enabled = false },
+    change_detection = { notify = false },
+    performance = {
+        rtp = { disabled_plugins = { "gzip", "tarPlugin", "tohtml", "tutor", "zipPlugin" } },
+    },
+})
